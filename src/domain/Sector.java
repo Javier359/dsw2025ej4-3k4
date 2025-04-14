@@ -2,6 +2,7 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.InvalidPropertiesFormatException;
+import javax.swing.JOptionPane;
 
 public class Sector {
     private int numero;
@@ -26,7 +27,12 @@ public class Sector {
 
     public void agregarAnimal(Mamifero mamifero) throws IllegalArgumentException, InvalidPropertiesFormatException {
         if(mamifero == null) throw new IllegalArgumentException();
-        if(mamifero.getTipoAlimentacion() != this.tipoAlimentacion) throw new InvalidPropertiesFormatException("El sector no admite el animal");
+        
+        if(!mamifero.getTipoAlimentacion().equals(this.tipoAlimentacion)){
+            throw new InvalidPropertiesFormatException(" Error: El sector actual no admite este tipo de alimentación.\n"
+                                                        + " Sectores para herbívoros: 1 y 3.\n"
+                                                        + " Sectores para carnívoros: 2 y 4.");                                                         
+        }
         if(animales.size() == limite) throw new InvalidPropertiesFormatException("El sector no admite más animales");
         animales.add(mamifero);
     }
