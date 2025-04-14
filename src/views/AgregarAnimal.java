@@ -252,7 +252,8 @@ public class AgregarAnimal extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentAdded
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-
+        new Menu().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jTextFieldValorFIjoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorFIjoActionPerformed
